@@ -3,10 +3,7 @@ import os
 
 load_dotenv()
 
-GOOGLE_API_KEY = os.getenv("AIzaSyCfP4AXadrlGf29yrl8xzMl3UDpnfJ1G84")
-
-MODEL_WRITER = "gemini-1.5-pro"
-MODEL_FAST = "gemini-1.5-flash"
+GOOGLE_API_KEY = os.getenv("GROQ_API_KEY")
 
 OUTPUT_DIR = "outputs"
 TRACE_DIR = "traces"

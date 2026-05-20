@@ -1,16 +1,25 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
-from app.config import MODEL_WRITER, MODEL_FAST
+from langchain_groq import ChatGroq
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 
 def get_writer_llm():
-    return ChatGoogleGenerativeAI(
-        model=MODEL_WRITER,
-        temperature=0.8
+
+    return ChatGroq(
+        model_name="llama-3.1-8b-instant",
+        groq_api_key=GROQ_API_KEY,
+        temperature=0.7,
     )
 
 
 def get_fast_llm():
-    return ChatGoogleGenerativeAI(
-        model=MODEL_FAST,
-        temperature=0.3
+
+    return ChatGroq(
+        model="llama-3.1-8b-instant",
+        groq_api_key=GROQ_API_KEY,
+        temperature=0.3,
     )
